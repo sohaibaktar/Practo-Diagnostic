@@ -27,6 +27,7 @@ public class CustomerController {
 	 * DeleteMapping used for Delete the data
 	 * 
 	 */
+	
 	@GetMapping("/patients")
 	public List<Customers> getCustomers(){
 		return this.customerService.getAllCustomers();
@@ -43,9 +44,19 @@ public class CustomerController {
 	}
 	
 	@DeleteMapping("/patients/{id}")
-	public void deleteCustomer(@PathVariable int id ){
-		 customerService.deleteCustomer(id);
+	public String deleteCustomer(@PathVariable int id ){
+		 return customerService.deleteCustomer(id);
 	}
+	
+	//Update Customer Data
+	@PutMapping("/patients/{id}")
+	public Customers updateCustomer(@PathVariable int id,@RequestBody Customers customer ){
+		 return customerService.updateCustomer(id,customer);
+	}
+	
+	
+	
+	
 	
 	
 	

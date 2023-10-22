@@ -13,7 +13,11 @@ public interface CustomerService {
 
 	public Customers addCustomer(Customers customer);
 
-	public void deleteCustomer(int id);
+	public String deleteCustomer(int id);
+
+	public Customers updateCustomer(int id, Customers customer);
+
+	
 	
 
 }
