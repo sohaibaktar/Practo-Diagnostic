@@ -37,7 +37,7 @@ public class CustomerController {
 	public Optional<Customers> getCustomer(@PathVariable int id ){
 		return this.customerService.getCustomerbyId(id);
 	}
-	
+		
 	@PostMapping("/patients")
 	public Customers addpatients(@RequestBody Customers customer) {
 		return this.customerService.addCustomer(customer);

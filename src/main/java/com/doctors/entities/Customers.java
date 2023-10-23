@@ -1,5 +1,6 @@
 package com.doctors.entities;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +32,9 @@ public class Customers {
 	
 	@Column(name = "password")
 	private String password;
+	
+//	@OneToMany(mappedBy = "customer")
+//	private List<Test> tests;
 	
 
 }
