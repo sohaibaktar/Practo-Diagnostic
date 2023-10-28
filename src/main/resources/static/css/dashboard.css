@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    background-image: url('../images/dashboard.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+}
+
+nav ul li {
+    
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover{
+    color: aquamarine;
+    background-color: #f8548a;
+}
+
+section.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 30px; /* Increase the padding to make the button larger */
+    border: none;
+    border-radius: 8px; /* Adjust the border-radius for rounded corners */
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 25px; /* Adjust the font size */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.card {
+    display: flex;
+    background-color: rgba(15, 2, 2, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card div {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

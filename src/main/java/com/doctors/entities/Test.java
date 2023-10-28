@@ -26,7 +26,7 @@ public class Test {
 	private Date testDate;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "cust_id")
+	@JoinColumn(name = "cust_id", referencedColumnName = "id")
 	private Customers customer;
 	
 
