@@ -12,7 +12,7 @@ function submitTestForm() {
     };
 
     // Make a POST request to your server to save the test booking
-    fetch('http://localhost:8080/tests', {
+    fetch('/tests', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

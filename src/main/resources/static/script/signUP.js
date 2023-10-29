@@ -14,7 +14,7 @@ function submitForm() {
     };
 
     // Make a POST request to your Spring Boot API endpoint
-    fetch('http://localhost:8080/patients', {
+    fetch('/patients', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
