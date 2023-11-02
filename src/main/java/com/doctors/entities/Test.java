@@ -24,6 +24,18 @@ public class Test {
 	private String testName;
 	@Column(name = "test_date")
 	private Date testDate;
+	@Column(name = "department")
+	private String department;
+	@Column(name = "doctor")
+	private String doctor;
+	
+//	@Lob
+//	@Column(name = "prescription", columnDefinition = "bytea")
+//	private Blob prescription;
+//	
+//	@Lob
+//    @Column(name = "prescription_image", columnDefinition = "bytea")
+//    private byte[] prescriptionImage;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "cust_id", referencedColumnName = "id")

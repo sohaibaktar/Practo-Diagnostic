@@ -1,17 +1,20 @@
-function submitForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const city = document.getElementById('city').value;
-    const password = document.getElementById('password').value;
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    const formData = {
-        name: name,
-        email: email,
-        phone: phone,
-        city: city,
-        password: password
-    };
+    //get data from form
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var city = document.getElementById('city').value;
+    var password = document.getElementById('password').value;
+
+     var formData = {
+         name: name,
+         email: email,
+         phone: phone,
+         city: city,
+         password: password
+     };
 
     // Make a POST request to your Spring Boot API endpoint
     fetch('/patients', {
@@ -21,14 +24,19 @@ function submitForm() {
         },
         body: JSON.stringify(formData),
     })
-        .then(response => response.json())
+        .then(response => {
+			alert("Account Created!!");
+			return response.json();
+			
+		})
         .then(data => {
-            console.log('Success:', data);
             // Optionally, you can redirect to another page or show a success message
-            window.location.href = `dashboard.html?customerId=${data.customerId}`;
+            window.location.href = `index.html?customerId=${data.customerId}`;
         })
         .catch((error) => {
             console.error('Error:', error);
             // Handle errors, show an error message, etc.
         });
-}
+        
+        console.log("fetch")
+});

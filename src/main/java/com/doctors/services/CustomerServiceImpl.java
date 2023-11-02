@@ -88,6 +88,14 @@ public class CustomerServiceImpl implements CustomerService {
 				
 		return null;
 	}
+	@Override
+	public Optional<Customers> login(Customers inputCsmailpass) {
+		System.out.println(inputCsmailpass.getEmail()+"--"+inputCsmailpass.getPassword());
+		//Customers customer = customerRepo.findByEmailAndPassword();
+		//System.out.println(customer.getEmail()+"--"+customer.getPassword());
+		
+		return Optional.ofNullable(customerRepo.findByEmailAndPassword(inputCsmailpass.getEmail(),inputCsmailpass.getPassword()));
+	}
 	
 
 	

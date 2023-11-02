@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.doctors.entities.Test;
 
 import com.doctors.services.TestService;
@@ -45,7 +45,7 @@ public class TestController {
 	 * Add data to test aslo foreign key referenced by Customer
 	 */
 	@PostMapping("/tests")
-	public Test addtest(@RequestBody Test test) {
+	public Test addtest(@ModelAttribute Test test) {
 		return testService.addTests(test);
 	}
 	
