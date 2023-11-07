@@ -31,12 +31,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             // Display an error message
             
             document.getElementById("errorText").innerText = "Invalid email or password";
+            throw new Error('Invalid email or password');
         }
     })
     .then(function(data) {
         // Update the HTML with the customerId.
         var userIdElement = document.getElementById("userId");
-        userIdElement.innerHTML = "User ID: " + data.customerId;
+        //userIdElement.innerHTML = "User ID: " + data.customerId;
 
         // Redirect the user to the dashboard if needed.
          window.location.href = "/dashboard.html?id=" + data.customerId;

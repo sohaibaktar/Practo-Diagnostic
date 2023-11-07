@@ -31,7 +31,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 		})
         .then(data => {
             // Optionally, you can redirect to another page or show a success message
-            window.location.href = `index.html?customerId=${data.customerId}`;
+            window.location.href = `index.html`;
         })
         .catch((error) => {
             console.error('Error:', error);

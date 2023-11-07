@@ -24,9 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('selectedDoctor').value = selectedValue;
     }
 }
-	  
-  
-  
+
   console.log("Hello, World!");
    const testForm = document.getElementById("testForm");
 

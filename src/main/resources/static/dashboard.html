@@ -656,16 +656,16 @@
 				<div class="col-lg-6 col-md-12 col-12">
 					<form class="form" id="testForm" enctype="multipart/form-data" action="#">
 						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
+							<!--<div class="col-lg-6 col-md-6 col-12">
 								<div class="form-group">
 									<input name="testName" type="text" placeholder="Test Name">
 								</div>
-							</div>
+							</div>-->
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="form-group">
 								   
 								    <select id="department" name="department" class="form-control" onchange="updateSelectedValue('department')">
-								        <option value="" selected disabled>Select Department</option>
+								        <option value="" selected disabled>Select Test Name</option>
 								        <option value="Allergy Testing">Allergy Testing</option>
 								        <option value="Angiography">Angiography</option>
 								        <option value="ECG">ECG</option>
@@ -688,8 +688,7 @@
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-								    
+								<div class="form-group"> 
 								    <select id="doctor" name="doctor" class="form-control" onchange="updateSelectedValue('doctor')">
 								        <option value="" selected disabled>Select Doctor</option>
 								        <option value="Dr. Akther Hossain">Dr. Akther Hossain</option>
@@ -711,11 +710,11 @@
 
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="form-group">
-									<input name="testDate" type="text" placeholder="Date" id="datepicker">
+									<input name="testDate" type="date" placeholder="Date" >
 								</div>
 							</div>
-							<!-- Add this input to your form 
-							<div class="col-lg-6 col-md-6 col-12">
+							  
+							<!--<div class="col-lg-6 col-md-6 col-12">
 							    <div class="form-group">
 							        <input name="prescriptionImage" type="file" accept="image/*" />
 							    </div>
@@ -756,7 +755,7 @@
 					<div class="single-fun">
 						<i class="icofont icofont-home"></i>
 						<div class="content">
-							<span class="counter">3468</span>
+							<span class="counter">456</span>
 							<p>Hospital Rooms</p>
 						</div>
 					</div>
@@ -767,7 +766,7 @@
 					<div class="single-fun">
 						<i class="icofont icofont-user-alt-3"></i>
 						<div class="content">
-							<span class="counter">557</span>
+							<span class="counter">350</span>
 							<p>Specialist Doctors</p>
 						</div>
 					</div>
@@ -789,7 +788,7 @@
 					<div class="single-fun">
 						<i class="icofont icofont-table"></i>
 						<div class="content">
-							<span class="counter">32</span>
+							<span class="counter">12</span>
 							<p>Years of Experience</p>
 						</div>
 					</div>
