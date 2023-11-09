@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title -->
-        <title>Practo Care - Medical Diagnostic Centre.</title>
+        <title>PractoPlus - Medical Diagnostic Centre.</title>
 		
 		<!-- Favicon -->
         <link rel="icon" href="img/favicon.png">
@@ -41,7 +41,20 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
-		
+		 <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        
+    </style>
     </head>
     <body>
 	
@@ -60,10 +73,10 @@
             </div>
         </div>
         <!-- End Preloader -->
-	
+		
 		<!-- Header Area -->
 		<header class="header">
-			
+		
 			<!-- Header Inner -->
 			<div class="header-inner">
 				<div class="container">
@@ -84,11 +97,17 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="dashboard.html">Home </a></li>
-											<li><a href="dashboard.html#doctors">Doctors </a></li>
+											<li class="active"><a href="dashboard.html">Home <!--<i class="icofont-rounded-down"></i>--></a>
+												
+											</li>
+											<li><a href="dashboard.html#doctors">Doctos </a></li>
 											<li><a href="dashboard.html#service">Services </a></li>
-											<li><a id="bookingHistoryLink" href="bookingHistory.html">Booking History </a></li>
-											<li><a href="#">Blogs </a></li>
+											<li><a href="bookingHistory.html">Booking History </a>
+												
+											</li>
+											<li><a href="#">Blogs </i></a>
+												
+											</li>
 											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</nav>
@@ -114,11 +133,11 @@
 				<div class="bread-inner">
 					<div class="row">
 						<div class="col-12">
-							<h2>Contact Us</h2>
+							<h2>My Test Booking History</h2>
 							<ul class="bread-list">
 								<li><a href="dashboard.html">Home</a></li>
 								<li><i class="icofont-simple-right"></i></li>
-								<li class="active">Contact Us</li>
+								<li class="active">Booking History</li>
 							</ul>
 						</div>
 					</div>
@@ -127,105 +146,22 @@
 		</div>
 		<!-- End Breadcrumbs -->
 				
-		<!-- Start Contact Us -->
-		<section class="contact-us section">
-			<div class="container">
-				<div class="inner">
-					<div class="row"> 
-						<div class="col-lg-6">
-							<div class="contact-us-left">
-								<!--Start Google-map -->
-								<div id="myMap"></div>
-								<!--/End Google-map -->
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="contact-us-form">
-								<h2>Contact With Us</h2>
-								<p>If you have any questions please fell free to contact with us.</p>
-								<!-- Form -->
-								<form class="form" method="post" action="mail/mail.php">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="form-group">
-												<input type="text" name="name" placeholder="Name" required="">
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="form-group">
-												<input type="email" name="email" placeholder="Email" required="">
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="form-group">
-												<input type="text" name="phone" placeholder="Phone" required="">
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="form-group">
-												<input type="text" name="subject" placeholder="Subject" required="">
-											</div>
-										</div>
-										<div class="col-lg-12">
-											<div class="form-group">
-												<textarea name="message" placeholder="Your Message" required=""></textarea>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="form-group login-btn">
-												<button class="btn" type="submit">Send</button>
-											</div>
-											<div class="checkbox">
-												<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Do you want to subscribe our Newsletter ?</label>
-											</div>
-										</div>
-									</div>
-								</form>
-								<!--/ End Form -->
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contact-info">
-					<div class="row">
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont icofont-ui-call"></i>
-								<div class="content">
-									<h3>+(91) 1234 56789</h3>
-									<p>sohaib_aktar@gmail.coom</p>
-								</div>
-							</div>
-						</div>
-						<!--/End single-info -->
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont-google-map"></i>
-								<div class="content">
-									<h3>Sealdah, Raja Bazar</h3>
-									<p>Kolkata, West Bengal 700014</p>
-								</div>
-							</div>
-						</div>
-						<!--/End single-info -->
-						<!-- single-info -->
-						<div class="col-lg-4 col-12 ">
-							<div class="single-info">
-								<i class="icofont icofont-wall-clock"></i>
-								<div class="content">
-									<h3>Mon - Sat: 8am - 5pm</h3>
-									<p>Sunday Closed</p>
-								</div>
-							</div>
-						</div>
-						<!--/End single-info -->
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/ End Contact Us -->
+		<!-- Start Main Body -->
+		<table id="testTable">
+	    <thead>
+	        <tr>
+	            <th>Test ID</th>
+	            <th>Test Name</th>
+	            <th>Test Date</th>
+	            <th>Doctor</th>
+	            <th>Prescription Image</th>
+	        </tr>
+	    </thead>
+	    <tbody></tbody>
+	</table>
+
+    <script src="script/fetchTests.js"></script>
+		<!--/ End Main Body -->
 		
 		<!-- Footer Area -->
 		<footer id="footer" class="footer ">
@@ -236,7 +172,8 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+								<p>PractoPlus: Your go-to for precise diagnostics. We blend technology and health, providing
+									convenient and accurate services for a healthier you.</p>
 								<!-- Social -->
 								<ul class="social">
 									<li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -254,20 +191,29 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a>
+											</li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a>
+											</li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a>
+											</li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
+													Cases</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other
+													Links</a></li>
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
+											<li><a href="#"><i class="fa fa-caret-right"
+														aria-hidden="true"></i>Consuling</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a>
+											</li>
+											<li><a href="#"><i class="fa fa-caret-right"
+														aria-hidden="true"></i>Testimonials</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>	
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact
+													Us</a></li>
 										</ul>
 									</div>
 								</div>
@@ -287,10 +233,12 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Newsletter</h2>
-								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
+									amet, consectetur adipisicing elit,</p>
 								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Your email address'" required="" type="email">
+									<input name="email" placeholder="Email Address" class="common-input"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+										required="" type="email">
 									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
 								</form>
 							</div>
@@ -305,8 +253,9 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>© Copyright 2023 | All Rights Reserved by <a href="https://sohaibaktar.github.io/sohaib_aktar/"
-									target="_blank">Sohaib Aktar Gazi</a> </p>
+								<p>© Copyright 2023 | All Rights Reserved by <a
+										href="https://sohaibaktar.github.io/sohaib_aktar/" target="_blank">Sohaib Aktar
+										Gazi</a> </p>
 							</div>
 						</div>
 					</div>

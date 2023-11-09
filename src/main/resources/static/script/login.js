@@ -35,12 +35,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         }
     })
     .then(function(data) {
-        // Update the HTML with the customerId.
-        var userIdElement = document.getElementById("userId");
-        //userIdElement.innerHTML = "User ID: " + data.customerId;
-
         // Redirect the user to the dashboard if needed.
-         window.location.href = "/dashboard.html?id=" + data.customerId;
+        // Store customerId in sessionStorage
+    	sessionStorage.setItem("customerId", data.customerId);
+    	// Redirect the user to the dashboard
+    	window.location.href = "/dashboard.html";
+        // window.location.href = "/dashboard.html?id=" + data.customerId;
     })
     .catch(error => {
         console.error('Error:', error);

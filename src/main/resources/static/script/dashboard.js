@@ -2,80 +2,66 @@ document.addEventListener("DOMContentLoaded", function () {
   // Wait for the DOM content to be fully loaded
 
   // Get the userId from the URL
-  var urlParams = new URLSearchParams(window.location.search);
-  var userId = urlParams.get('id');
-
+  //var urlParams = new URLSearchParams(window.location.search);
+  //var userId = urlParams.get('id');
+  // Retrieve customerId from sessionStorage
+	var customerId  = sessionStorage.getItem("customerId");
+	
+	//pass to bookingHistory
+	//const bookingHistoryLink = document.querySelector('#bookingHistoryLink');
+    //bookingHistoryLink.href = `bookingHistory.html?customerId=${customerId }`;
   // Now you can use the userId variable as needed on the Dashboard page
-  console.log("User ID on Dashboard: " + userId);
-// Display the userId in the HTML
-//  var userIdDisplay = document.getElementById('userIdDisplay');
-//  userIdDisplay.textContent = "User ID: " + userId;
-  
-  // ... (other Dashboard page logic)
-  
-  // JavaScript function to update the hidden input value when a selection is made
-	// dropdown menu
-	function updateSelectedValue(fieldName) {
-    var selectedValue = document.getElementById(fieldName).value;
-
-    if (fieldName === 'department') {
-        document.getElementById('selectedDepartment').value = selectedValue;
-    } else if (fieldName === 'doctor') {
-        document.getElementById('selectedDoctor').value = selectedValue;
-    }
-}
+  console.log("User ID on Dashboard: " + customerId +" type"+typeof(customerId ));
 
   console.log("Hello, World!");
    const testForm = document.getElementById("testForm");
 
   testForm.addEventListener("submit", function (event) {
     event.preventDefault();
-  
+   
    // Get other form data
-    const formData = new FormData(testForm);
-    
-    // Append prescription image file to FormData
-    //const prescriptionImage = document.querySelector('input[name="prescriptionImage"]').files[0];
-    //formData.append('prescriptionImage', prescriptionImage);
-
-   // Add userId as customerId in the form data
-   formData.append('customer', userId);
+    var formData = new FormData(testForm);
+    // take file from user and data as json
+    var fileInput = document.querySelector('input[name="prescriptionImage"]');
+    var data = {
+        testName: document.getElementById('selectedDepartment').value,
+        doctor: document.getElementById('selectedDoctor').value,
+        testDate: document.querySelector('input[name="testDate"]').value,
+        customerId:customerId ,
+    };
+   console.log(document.querySelector('input[name="testDate"]').value);
+   // Append  formData file and json
+    formData.append('file', fileInput.files[0]);
+    formData.append('data', JSON.stringify(data));
    
-   // Format the date before sending it to the server
-     var dateInput = formData.get('testDate');
-     var formattedDate = new Date(dateInput).toISOString().split('T')[0];
-     formData.set('testDate', formattedDate);
-   
-  	console.log(formattedDate);
-  	var dept = formData.get('department');
-  	console.log(dept);
-  	var pre = formData.get('prescriptionImage');
-  	console.log(pre);
   	// Perform POST request to the Spring Boot API
     fetch("/tests", {
       method: "POST",
       body: formData,
     })
-      .then(response => {
-			 if(response.ok){ 
-			  return response.json();	
-			 }else{
-				document.getElementById("info").innerText = "Invalid email or password";
-			 }
+     	.then(response => {
+		   console.log('Response from server:', response);
+		   return response.text();
 		})
-      .then(data => {
-		  // Update the HTML with the customerId.
+        .then(data => {
+			console.log("data: "+data);
+			 // Update the HTML with the customerId.
 	        var userIdElement = document.getElementById("info");
 	        userIdElement.innerHTML = "Your booking is Confirmed";
-	        console.log("Success:", data);
 	        alert("Success");
-        // Handle success (redirect, show a success message, etc.)
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        // Handle error (show an error message, etc.)
-      });
+			document.getElementById("testForm").reset();
+			// Manually reset dropdown values
+	        document.getElementById('selectedDepartment').value = '';
+	        document.getElementById('selectedDoctor').value = '';
+	       
+		})
+        .catch(error => console.error('Error:', error));
   });
   
-  // ... (other Dashboard page logic)
+  
 });
+//outsode theDOM cause dropdown select
+function updateSelectedValue(fieldName) {
+    var selectedValue = document.getElementById(fieldName).value;
+    document.getElementById('selected' + fieldName.charAt(0).toUpperCase() + fieldName.slice(1)).value = selectedValue;
+}

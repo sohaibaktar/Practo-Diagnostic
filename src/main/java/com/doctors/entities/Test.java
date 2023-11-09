@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -24,22 +25,17 @@ public class Test {
 	private String testName;
 	@Column(name = "test_date")
 	private Date testDate;
-	@Column(name = "department")
-	private String department;
+
 	@Column(name = "doctor")
 	private String doctor;
 	
-//	@Lob
-//	@Column(name = "prescription", columnDefinition = "bytea")
-//	private Blob prescription;
-//	
-//	@Lob
-//    @Column(name = "prescription_image", columnDefinition = "bytea")
-//    private byte[] prescriptionImage;
+	@Lob
+	@Column(name = "prescription")
+    private byte[] prescriptionImage;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "cust_id", referencedColumnName = "id")
-	private Customers customer;
+	private Customers customerId;
 	
 
 }

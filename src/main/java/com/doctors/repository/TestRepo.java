@@ -12,5 +12,7 @@ public interface TestRepo extends CrudRepository<Test,Integer>{
 	
 	//@Query("select u from tests u where u.testName=:n") @Param("n") 
 	public List<Test> findByTestName(String name);
+	
+	List<Test> findByCustomerId_Id(int customerId);
 
 }
