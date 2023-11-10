@@ -17,6 +17,8 @@ public interface CustomerService {
 
 	public Customers updateCustomer(int id, Customers customer);
 
+	public Optional<Customers> login(Customers customer);
+
 	
 
 	

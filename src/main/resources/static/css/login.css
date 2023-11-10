@@ -4,7 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f4f4f4;
-    background-image: url('../images/practoLoginBg.jpg');
+    background-image: url('../img/practoLoginBg.jpg');
     /* Replace 'background-image.jpg' with the actual path to your image */
     background-size: cover;
     background-position: center;
@@ -19,6 +19,7 @@ body {
 }
 
 .form {
+	position: relative;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -48,4 +49,11 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+#trytosignup{
+    position: absolute;
+    bottom: 25px; /* Adjust as needed for spacing */
+    right: 10px; /* Adjust as needed for spacing */
+    color: #fff; /* Add this line to ensure text is visible against the background */
+ 
 }

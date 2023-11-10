@@ -18,6 +18,8 @@ public interface TestService {
 
 	public List<Test> findAllByTestName(String testName);
 
+	List<Test> getAllTestsByCustomerId(int customerId);
+
 //	public Optional<Test> getTestByName(String name);
 
 }

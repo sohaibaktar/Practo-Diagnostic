@@ -1,9 +1,11 @@
 package com.doctors.controllers;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,11 +57,28 @@ public class CustomerController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
+	//Login by email id and password
+	@PostMapping("/login")
+	public ResponseEntity<Object> login(@RequestBody Customers inputCsmailpass) {
+		Optional<Customers> customer = customerService.login(inputCsmailpass);
+		
+		 if (customer.isPresent()) {
+		        // Return the customerId in the response
+		        return ResponseEntity.ok(Collections.singletonMap("customerId", customer.get().getId()));
+		    } else {
+		        return ResponseEntity.badRequest().body("Invalid email or password");
+		    }
+		
+		
+		
+/*		if( customerService.login(inputCsmailpass))
+		{
+			return ResponseEntity.ok("Login successful");
+		}else {
+			return ResponseEntity.badRequest().body("Invalid email or password");
+		}
+*/	
+	}
+		
 
 }

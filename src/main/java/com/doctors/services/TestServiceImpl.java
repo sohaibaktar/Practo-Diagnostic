@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.doctors.entities.Test;
 import com.doctors.repository.TestRepo;
 @Service
-public class TestServideImpl implements TestService {
+public class TestServiceImpl implements TestService {
 
 	@Autowired
 	TestRepo testRepo;
@@ -41,7 +43,7 @@ public class TestServideImpl implements TestService {
 			
 			originalTestDetails.setTestDate(test.getTestDate());
 			originalTestDetails.setTestName(test.getTestName());
-			originalTestDetails.setCustomer(test.getCustomer());
+			originalTestDetails.setCustomerId(test.getCustomerId());
 			
 			
 			return testRepo.save(originalTestDetails);
@@ -57,10 +59,16 @@ public class TestServideImpl implements TestService {
 		
 	}
 	@Override
+	@Transactional
 	public List<Test> findAllByTestName(String testName) {
 		// TODO Auto-generated method stub
 		return testRepo.findByTestName(testName);
 	}
+	@Override
+	@Transactional
+    public List<Test> getAllTestsByCustomerId(int customerId) {
+        return testRepo.findByCustomerId_Id(customerId);
+    }
 	
 
 }
