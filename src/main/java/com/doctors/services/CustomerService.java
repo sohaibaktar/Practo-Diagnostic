@@ -11,7 +11,8 @@ public interface CustomerService {
 	
 	public Optional<Customers> getCustomerbyId(long id);
 	
-	public Customers addCustomer(Customers customer);
+	void saveCustomer(Customers customer);
+    boolean isEmailOrPhoneExists(String email, long phone);
 
 	public String deleteCustomer(int id);
 

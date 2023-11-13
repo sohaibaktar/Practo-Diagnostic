@@ -25,16 +25,25 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
         body: JSON.stringify(formData),
     })
         .then(response => {
-			alert("Account Created!!");
-			return response.json();
-			
+			  if (response.ok) {
+	            alert("Account Created!!");
+	            window.location.href = `index.html`;
+		      } else {
+		          return response.text().then(errorMessage => {
+		                 console.error('Error:', errorMessage);
+		                 // Display error message to the user
+		                 alert(errorMessage);
+		          });
+		      }
+		        //return response.json();
 		})
-        .then(data => {
+        /*.then(data => {
+			alert("Account Created!!");
             // Optionally, you can redirect to another page or show a success message
             window.location.href = `index.html`;
-        })
+        })*/
         .catch((error) => {
-            console.error('Error:', error);
+            console.error('Error:', error.message);
             // Handle errors, show an error message, etc.
         });
         

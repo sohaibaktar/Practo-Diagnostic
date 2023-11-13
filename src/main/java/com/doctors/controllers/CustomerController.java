@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,10 +40,15 @@ public class CustomerController {
 	public Optional<Customers> getCustomer(@PathVariable int id ){
 		return this.customerService.getCustomerbyId(id);
 	}
-		
+	//Sign up	
 	@PostMapping("/patients")
-	public Customers addpatients(@RequestBody Customers customer) {
-		return this.customerService.addCustomer(customer);
+	public ResponseEntity<String> addpatients(@RequestBody Customers customer) {
+		 if (customerService.isEmailOrPhoneExists(customer.getEmail(), customer.getPhone())) {
+	            return new ResponseEntity<>("Email or phone already exists", HttpStatus.BAD_REQUEST);
+	        }
+	        
+	        customerService.saveCustomer(customer);
+	        return new ResponseEntity<>("Account Created!!", HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/patients/{id}")
@@ -68,16 +74,6 @@ public class CustomerController {
 		    } else {
 		        return ResponseEntity.badRequest().body("Invalid email or password");
 		    }
-		
-		
-		
-/*		if( customerService.login(inputCsmailpass))
-		{
-			return ResponseEntity.ok("Login successful");
-		}else {
-			return ResponseEntity.badRequest().body("Invalid email or password");
-		}
-*/	
 	}
 		
 

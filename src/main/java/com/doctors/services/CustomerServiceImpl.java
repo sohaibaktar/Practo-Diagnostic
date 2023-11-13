@@ -40,11 +40,15 @@ public class CustomerServiceImpl implements CustomerService {
 	 * 	save --< from crud Repo
 	 * 	   
 	 */
-	@Override
-	public Customers addCustomer(Customers customer) {
-		
-		return this.customerRepo.save(customer);
-	}
+	 @Override
+	    public void saveCustomer(Customers customer) {
+	        customerRepo.save(customer);
+	    }
+
+	    @Override
+	    public boolean isEmailOrPhoneExists(String email, long phone) {
+	        return customerRepo.existsByEmailOrPhone(email, phone);
+	    }
 	/*	implementation-->
 	 * 	Delete All details of Customer by Id   (as a service)
 	 * 	DeletebyId --< from crud Repo
