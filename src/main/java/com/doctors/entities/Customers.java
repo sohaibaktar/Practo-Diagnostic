@@ -25,6 +25,7 @@ public class Customers {
 	private String email;
 	
 	@Column(name = "phone")
+	
 	private long phone;
 	
 	@Column(name = "city")

@@ -7,7 +7,17 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     var phone = document.getElementById('phone').value;
     var city = document.getElementById('city').value;
     var password = document.getElementById('password').value;
-
+	// Validate mobile number (10 digits)
+	    if (!/^\d{10}$/.test(phone)) {
+	        alert("Invalid mobile number. Please enter a 10-digit mobile number.");
+	        return;
+	    }
+	
+	    // Validate password (at least 8 characters with specified criteria)
+	    if (!/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$/.test(password)) {
+	        alert("Invalid password. Password must be at least 8 characters long and include at least one digit, one lowercase letter, one uppercase letter, and one special character.");
+	        return;
+	    }
      var formData = {
          name: name,
          email: email,
